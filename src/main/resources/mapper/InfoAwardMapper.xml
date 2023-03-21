@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzuli.mapper.InfoAwardMapper">
+
+    <resultMap id="BaseResultMap" type="com.zzuli.po.InfoAward">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="college" column="college" jdbcType="VARCHAR"/>
+            <result property="competitionName" column="competition_name" jdbcType="VARCHAR"/>
+            <result property="holdUnit" column="hold_unit" jdbcType="VARCHAR"/>
+            <result property="form" column="form" jdbcType="TINYINT"/>
+            <result property="category" column="category" jdbcType="VARCHAR"/>
+            <result property="isOther" column="is_other" jdbcType="TINYINT"/>
+            <result property="awardGrade" column="award_grade" jdbcType="VARCHAR"/>
+            <result property="studentIds" column="student_ids" jdbcType="VARCHAR"/>
+            <result property="guideTeacher" column="guide_teacher" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="recGrade" column="rec_grade" jdbcType="VARCHAR"/>
+            <result property="score" column="score" jdbcType="INTEGER"/>
+            <result property="isDelete" column="is_delete" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,college,competition_name,
+        hold_unit,form,category,
+        is_other,award_grade,student_ids,
+        guide_teacher,create_time,rec_grade,
+        score,is_delete,update_time
+    </sql>
+</mapper>
