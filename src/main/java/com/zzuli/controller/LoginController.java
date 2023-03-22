@@ -1,4 +1,5 @@
 package com.zzuli.controller;
+import io.swagger.annotations.Api;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,6 +13,7 @@ import java.util.Collection;
 
 @RequestMapping("/login")
 @RestController
+@Api(value = "登录",tags = "登录接口")
 public class LoginController {
 
     @PostMapping("/success")
