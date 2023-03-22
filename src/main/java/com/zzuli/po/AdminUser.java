@@ -45,25 +45,21 @@ public class AdminUser implements Serializable {
      */
     @TableField(value = "nick_name")
     private String nickName;
-
     /**
      * 老师对应学院
      */
     @TableField(value = "college")
     private String college;
-
     /**
      * 
      */
     @TableField(value = "create_time")
     private Date createTime;
-
     /**
      * 
      */
     @TableField(value = "update_time")
     private Date updateTime;
-
     /**
      * 
      */

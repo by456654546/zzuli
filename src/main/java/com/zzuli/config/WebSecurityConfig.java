@@ -59,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().defaultSuccessUrl("/").successForwardUrl("/login/success").and()
                 .rememberMe().tokenValiditySeconds(1800).and()
-                .logout().permitAll();//登录成功跳转到/login-success4
+                .logout().permitAll().and().csrf().disable();//登录成功跳转到/login-success4
     }
 
 }

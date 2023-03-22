@@ -1,6 +1,7 @@
 package com.zzuli.po;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.ToString;
 
@@ -78,6 +79,7 @@ public class InfoAward implements Serializable {
     /**
      * 获奖时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time")
     private Date createTime;
 
@@ -116,6 +118,7 @@ public class InfoAward implements Serializable {
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "update_time")
     private Date updateTime;
 
