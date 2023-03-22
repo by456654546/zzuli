@@ -2,6 +2,9 @@ package com.zzuli.service;
 
 import com.zzuli.po.AdminRole;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+
+import java.util.List;
 
 /**
 * @author 86136
@@ -9,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-03-14 20:52:45
 */
 public interface AdminRoleService extends IService<AdminRole> {
-
+    List<AdminRole> getRoles(String ids);
 }
