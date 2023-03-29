@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-03-14 20:52:54
 */
 public interface InfoAuditService extends IService<InfoAudit> {
-
+    int insertCheckForm(Integer AwardId);
 }

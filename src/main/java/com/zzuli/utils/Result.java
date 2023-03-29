@@ -25,7 +25,12 @@ public class Result<T> {
         result.setMessage("成功");
         return result;
     }
-
+    public static<T> Result<T> ok() {
+        Result<T> result = new Result<>();
+        result.setCode(20000);
+        result.setMessage("成功");
+        return result;
+    }
     //失败的方法,有data数据
     public static<T> Result<T> fail(T data) {
         Result<T> result = new Result<>();
@@ -36,7 +41,12 @@ public class Result<T> {
         result.setMessage("失败");
         return result;
     }
-
+    public static Result fail(String msg) {
+        Result result = new Result<>();
+        result.setCode(20001);
+        result.setMessage(msg);
+        return result;
+    }
     public Result<T> message(String msg){
         this.setMessage(msg);
         return this;

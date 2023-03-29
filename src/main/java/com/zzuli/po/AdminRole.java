@@ -36,7 +36,7 @@ public class AdminRole implements Serializable {
     /**
      * 
      */
-    @TableField(value = "is_delete")
+    @TableField
     private String isDelete;
 
     @TableField(exist = false)

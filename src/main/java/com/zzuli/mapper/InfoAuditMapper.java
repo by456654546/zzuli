@@ -2,7 +2,10 @@ package com.zzuli.mapper;
 
 import com.zzuli.po.InfoAudit;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zzuli.vo.InfoAwardVo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
 * @author 86136

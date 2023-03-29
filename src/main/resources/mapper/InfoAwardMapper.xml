@@ -13,7 +13,7 @@
             <result property="category" column="category" jdbcType="VARCHAR"/>
             <result property="isOther" column="is_other" jdbcType="TINYINT"/>
             <result property="awardGrade" column="award_grade" jdbcType="VARCHAR"/>
-            <result property="studentIds" column="student_ids" jdbcType="VARCHAR"/>
+            <result property="studentName" column="student_name" jdbcType="VARCHAR"/>
             <result property="guideTeacher" column="guide_teacher" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="recGrade" column="rec_grade" jdbcType="VARCHAR"/>
@@ -29,4 +29,10 @@
         guide_teacher,create_time,rec_grade,
         score,is_delete,update_time
     </sql>
+    <select id="getDepAward" resultType="com.zzuli.vo.InfoAwardVo">
+        select * from info_award where is_checked_department=1
+    </select>
+    <select id="getCheckedAward" resultType="com.zzuli.vo.InfoAwardVo">
+        select * from info_award a join info_audit u on a.id=u.award_id where u.is_check=1;
+    </select>
 </mapper>

@@ -17,4 +17,5 @@
         id,award_id,is_check,
         create_time,update_time,is_delete
     </sql>
+
 </mapper>

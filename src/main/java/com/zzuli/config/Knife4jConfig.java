@@ -24,6 +24,7 @@ public class Knife4jConfig {
                         .build())
                 //分组名称
                 .groupName("zzuli")
+                
                 .select()
                 //这里指定Controller扫描包路径
                 .apis(RequestHandlerSelectors.basePackage("com.zzuli.controller"))

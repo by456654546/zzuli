@@ -67,8 +67,8 @@ public class InfoAward implements Serializable {
     /**
      * 获奖学生Id
      */
-    @TableField(value = "student_ids")
-    private String studentIds;
+    @TableField(value = "student_name")
+    private String studentName;
 
     /**
      * 指导老师
@@ -79,7 +79,7 @@ public class InfoAward implements Serializable {
     /**
      * 获奖时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @TableField(value = "create_time")
     private Date createTime;
 
@@ -110,10 +110,20 @@ public class InfoAward implements Serializable {
     @TableField(value = "is_checked_office")
     private Integer isCheckedOffice;
     /**
+     * 获奖比赛名称
+     */
+    @TableField(value = "race_name")
+    private String raceName;
+    /**
+     * 对应保存老师的id信息，返回退回消息使用
+     */
+    @TableField(value = "teacher_id")
+    private Integer teacherId;
+    /**
      * 
      */
-    @TableLogic(value = "is_delete")
-    private String isDelete;
+    @TableLogic
+    private Integer isDelete;
 
     /**
      * 
@@ -145,7 +155,7 @@ public class InfoAward implements Serializable {
             && (this.getCategory() == null ? other.getCategory() == null : this.getCategory().equals(other.getCategory()))
             && (this.getIsOther() == null ? other.getIsOther() == null : this.getIsOther().equals(other.getIsOther()))
             && (this.getAwardGrade() == null ? other.getAwardGrade() == null : this.getAwardGrade().equals(other.getAwardGrade()))
-            && (this.getStudentIds() == null ? other.getStudentIds() == null : this.getStudentIds().equals(other.getStudentIds()))
+            && (this.getStudentName() == null ? other.getStudentName() == null : this.getStudentName().equals(other.getStudentName()))
             && (this.getGuideTeacher() == null ? other.getGuideTeacher() == null : this.getGuideTeacher().equals(other.getGuideTeacher()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getRecGrade() == null ? other.getRecGrade() == null : this.getRecGrade().equals(other.getRecGrade()))
@@ -166,7 +176,7 @@ public class InfoAward implements Serializable {
         result = prime * result + ((getCategory() == null) ? 0 : getCategory().hashCode());
         result = prime * result + ((getIsOther() == null) ? 0 : getIsOther().hashCode());
         result = prime * result + ((getAwardGrade() == null) ? 0 : getAwardGrade().hashCode());
-        result = prime * result + ((getStudentIds() == null) ? 0 : getStudentIds().hashCode());
+        result = prime * result + ((getStudentName() == null) ? 0 : getStudentName().hashCode());
         result = prime * result + ((getGuideTeacher() == null) ? 0 : getGuideTeacher().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getRecGrade() == null) ? 0 : getRecGrade().hashCode());

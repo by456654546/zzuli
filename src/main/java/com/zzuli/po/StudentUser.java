@@ -76,7 +76,7 @@ public class StudentUser implements Serializable {
     /**
      * 
      */
-    @TableField(value = "is_delete")
+    @TableField
     private Integer isDelete;
 
     @TableField(exist = false)

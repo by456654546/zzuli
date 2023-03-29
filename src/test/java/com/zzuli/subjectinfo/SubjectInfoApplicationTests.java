@@ -1,6 +1,8 @@
 package com.zzuli.subjectinfo;
 
 import com.zzuli.mapper.AdminUserMapper;
+import com.zzuli.mapper.InfoAwardMapper;
+import com.zzuli.po.InfoAward;
 import com.zzuli.po.Role;
 import com.zzuli.service.RoleService;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,8 @@ class SubjectInfoApplicationTests {
     AdminUserMapper adminUserMapper;
     @Autowired
     RoleService RoleService;
+    @Resource
+    InfoAwardMapper infoAwardMapper;
     PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
     @Test
     void contextLoads() {
@@ -29,6 +33,12 @@ class SubjectInfoApplicationTests {
     {
         List<Role> roles = RoleService.getRoles("1,2");
         System.out.println(roles);
+    }
+    @Test
+    void Select()
+    {
+//        List<InfoAward> infoAwards = infoAwardMapper.getDepAward();
+//        System.out.println(infoAwards);
     }
 
 }

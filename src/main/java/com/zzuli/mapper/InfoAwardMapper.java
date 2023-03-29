@@ -2,7 +2,10 @@ package com.zzuli.mapper;
 
 import com.zzuli.po.InfoAward;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zzuli.vo.InfoAwardVo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
 * @author 86136
@@ -12,7 +15,8 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface InfoAwardMapper extends BaseMapper<InfoAward> {
-
+    List<InfoAwardVo> getDepAward();
+    List<InfoAwardVo> getCheckedAward();
 }
 
 
