@@ -106,4 +106,6 @@ public class InfoAwardVo {
      */
     @TableField(value = "race_name")
     private String raceName;
+    @TableField(value = "teacher_id")
+    private Integer teacherId;
 }

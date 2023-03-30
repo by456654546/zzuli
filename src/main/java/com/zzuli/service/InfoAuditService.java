@@ -2,6 +2,7 @@ package com.zzuli.service;
 
 import com.zzuli.po.InfoAudit;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zzuli.po.ReturnCheck;
 
 /**
 * @author 86136
@@ -10,4 +11,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface InfoAuditService extends IService<InfoAudit> {
     int insertCheckForm(Integer AwardId);
+
+    int CheckSuccess(Integer awardId);
+
+    int CheckFail(ReturnCheck returnCheck);
+
+    int OfficeCheckSuccess(Integer awardId);
+
+    int OfficeCheckFail(ReturnCheck returnCheck);
 }

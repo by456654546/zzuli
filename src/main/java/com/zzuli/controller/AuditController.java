@@ -1,5 +1,6 @@
 package com.zzuli.controller;
 
+import com.zzuli.po.ReturnCheck;
 import com.zzuli.service.InfoAuditService;
 import com.zzuli.utils.Result;
 import io.swagger.annotations.ApiOperation;
@@ -22,11 +23,40 @@ public class AuditController {
         return Result.ok();
     }
     //todo 审核成功接口 和 审核失败接口
-    @ApiOperation("领导审核")
+    @ApiOperation("一级领导审核成功")
     @GetMapping("/depAudit/{awardId}/success")
-    public Result depAuditIng(@PathVariable("awardId") Integer awardId)
+    public Result depAuditIngSuccess(@PathVariable("awardId") Integer awardId)
     {
-
-        return null;
+        int result = auditService.CheckSuccess(awardId);
+        if(result==0)
+            return Result.fail("审核出现问题，请重试");
+        return Result.ok();
+    }
+    @ApiOperation("一级领导审核失败")
+    @PostMapping("/depAudit/fail")
+    public Result depAuditIngFail(@RequestBody ReturnCheck returnCheck)
+    {
+        int result = auditService.CheckFail(returnCheck);
+        if(result==0)
+            return Result.fail("审核出现问题，请重试");
+        return Result.ok();
+    }
+    @ApiOperation("二级领导审核成功")
+    @GetMapping("/offAudit/{awardId}/success")
+    public Result offAuditIngSuccess(@PathVariable("awardId") Integer awardId)
+    {
+        int result = auditService.OfficeCheckSuccess(awardId);
+        if(result==0)
+            return Result.fail("审核出现问题，请重试");
+        return Result.ok();
+    }
+    @ApiOperation("二级领导审核失败")
+    @PostMapping("/offAudit/fail")
+    public Result offAuditFail(@RequestBody ReturnCheck returnCheck)
+    {
+        int result = auditService.OfficeCheckFail(returnCheck);
+        if(result==0)
+            return Result.fail("审核出现问题，请重试");
+        return Result.ok();
     }
 }

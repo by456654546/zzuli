@@ -54,4 +54,5 @@ public class InfoAwardController {
         List<InfoAwardVo> depAward = infoAwardService.getDepAward();
         return Result.ok(depAward);
     }
+    //todo 查询二级已审核过的奖状  查询发送给二级领导的奖状
 }

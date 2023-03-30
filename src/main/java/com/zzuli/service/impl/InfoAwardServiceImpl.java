@@ -16,8 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-import java.text.SimpleDateFormat;
+import com.zzuli.utils.SystemState;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -102,9 +101,21 @@ public class InfoAwardServiceImpl extends ServiceImpl<InfoAwardMapper,InfoAward>
     }
 
     @Override
-    public void updateSate(Integer awardId) {
+    public void updateSate(Integer awardId,String msg) {
         InfoAward infoAward = infoAwardMapper.selectById(awardId);
-        infoAward.setIsCheckedDepartment(1);
+        switch (msg)
+        {
+            case SystemState.CHECK_FORM_FIRST:infoAward.setIsCheckedDepartment(2);break;
+            case SystemState.CHECK_FORM_SECOND:infoAward.setIsCheckedOffice(2);break;
+            case SystemState.SEND_CHECK_FORM_FIRST:infoAward.setIsCheckedDepartment(1);break;
+            case SystemState.SEND_CHECK_FORM_SECOND:infoAward.setIsCheckedOffice(1);break;
+            case SystemState.FAIL_CHECK:{
+                infoAward.setIsCheckedOffice(0);
+                infoAward.setIsCheckedDepartment(0);
+                break;
+            }
+        }
+
         int i = infoAwardMapper.updateById(infoAward);
         if(i==0)
             ZzuliException.cast("修改状态失败");
